@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Fermipy / Fermi generated outputs
+#output/
+scratch/
+PFILES*/
+#*.log
+*.par
+*.npy
+
+# Large Fermi products
+*.fits
+*.fit
+*.fits.gz
+
+# Generated analysis maps/products
+lt.fits
+ccube*.fits
+srcmap*.fits
+bexpmap*.fits
+srcmdl*.xml
+ft1*.fits
+ft2*.fits
+galdiff.fits
+isodiff*.txt
+
+# Plots and generated result files
+#*.png
+#*.pdf
+#*.eps
+
+# Temporary files
+*.tmp
+*.bak
+.DS_Store

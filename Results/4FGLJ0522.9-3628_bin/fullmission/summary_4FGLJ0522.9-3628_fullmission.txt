@@ -1,0 +1,44 @@
+# ============================================
+# Summary for 4FGLJ0522.9-3628_fullmission
+# ============================================
+#
+# --- Run definition ---
+# run_id: fullmission
+# MJD_start: 54682.66
+# MJD_stop: 61142.00
+# duration_days: 6459.34
+#
+# --- Power Law fit ---
+# PL_TS: 24534.78
+# PL_Index: -2.4388
+# PL_Index_err: 0.0052
+# PL_flux_ph_cm2_s: 1.0830e-07
+# PL_flux_err: 7.4652e-10
+# PL_eflux_MeV_cm2_s: 3.4997e-05
+# PL_eflux_err: 2.2771e-07
+# PL_Npred: 25828.4
+# PL_loglike: -719044.7076
+# PL_fit_quality: 2
+#
+# --- Broken Power Law (best E_break) ---
+# Best_Eb_MeV: 100000.0
+# Best_Eb_GeV: 100.000
+# Eb_err_lo_MeV: 0.0
+# Eb_err_hi_MeV: 5706.7
+# BPL_Index1: -1.9397
+# BPL_Index2: -5.0000
+# Delta_Gamma: 3.0603
+# BPL_loglike: -720656.5456
+# BPL_Npred: 21930.9
+# BPL_fit_quality: 2
+#
+# --- Spectral hardening test ---
+# TS_hardening: -3223.6775
+# is_hardening: False
+# TS_hardening_gt12: False
+# TS_hardening_gt16: False
+#
+# --- Quality flags ---
+# PL_TS_gt25: True
+# PL_converged: False
+# BPL_converged: False

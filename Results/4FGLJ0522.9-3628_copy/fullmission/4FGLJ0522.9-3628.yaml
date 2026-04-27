@@ -1,0 +1,69 @@
+logging:
+  verbosity : 3
+#--------#
+fileio:
+  outdir : output
+  logfile : 4FGLJ0522.9-3628
+  usescratch : False
+  scratchdir : scratch
+#--------#
+data:
+  evfile : /sdf/data/fermi/u/adinesh/DATA/J0522/events_j0522.txt
+  scfile : /sdf/data/fermi/u/adinesh/DATA/J0522/L260416101627E79FF56C01_SC00.fits
+#--------#
+binning:
+  roiwidth : 15
+  binsperdec : 10
+#--------#
+selection:
+  target : '4FGLJ0522.9-3628'
+  radius : 20
+  tmin : 239557824 
+  tmax : 797644800 
+  evclass : 128
+  filter : '(DATA_QUAL>0)&&(LAT_CONFIG==1)&&(angsep(80.737,-36.4686, RA_SUN, DEC_SUN)>15)'
+#--------#
+gtlike:
+  edisp : True
+  edisp_bins : -1
+  edisp_disable : ['isodiff']
+  irfs : 'P8R3_SOURCE_V3'
+#--------#
+model:
+  src_roiwidth : 20
+  galdiff : '/sdf/data/fermi/u/adinesh/DATA/Diffuse/gll_iem_v07.fits'
+  catalogs :
+    - '4FGL-DR3'
+  extdir : '/sdf/data/fermi/u/adinesh/Extended_archive_v18/'
+#--------#
+components:
+  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF3_v1.txt"},
+     selection : { evtype : 32, zmax : 90, emin : 100, emax : 300 } }
+  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF2_v1.txt"},
+     selection : { evtype : 16, zmax : 90, emin : 100, emax : 300} }
+  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF3_v1.txt"},
+     selection : { evtype : 32, zmax : 100, emin : 300, emax : 1000} }
+  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF2_v1.txt"},
+     selection : { evtype : 16, zmax : 100, emin : 300, emax : 1000} }
+  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF1_v1.txt"},
+     selection : { evtype : 8, zmax : 100, emin : 300, emax : 1000} }
+  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF3_v1.txt"},
+     selection : { evtype : 32, zmax : 105, emin : 1000, emax : 300000} }
+  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF2_v1.txt"},
+     selection : { evtype : 16, zmax : 105, emin : 1000, emax : 300000} }
+  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF1_v1.txt"},
+     selection : { evtype : 8, zmax : 105, emin : 1000, emax : 300000} }
+  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF0_v1.txt"},
+     selection : { evtype : 4, zmax : 105, emin : 1000, emax : 300000} }
+  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF2_v1.txt"},
+     selection : { evtype : 16, zmax : 105, emin : 300000, emax : 2000000} }
+  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF1_v1.txt"},
+     selection : { evtype : 8, zmax : 105, emin : 300000, emax : 2000000} }
+  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF0_v1.txt"},
+     selection : { evtype : 4, zmax : 105, emin : 300000, emax : 2000000} }
+#--------#
+plotting:
+  format : png
+#--------#
+sed:
+  use_local_index : True

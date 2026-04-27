@@ -1,0 +1,7 @@
+/sdf/data/fermi/u/adinesh/DATA/J0522/L26041118314385810DAB75_PH00.fits
+/sdf/data/fermi/u/adinesh/DATA/J0522/L26041118314385810DAB75_PH01.fits
+/sdf/data/fermi/u/adinesh/DATA/J0522/L26041118314385810DAB75_PH02.fits
+/sdf/data/fermi/u/adinesh/DATA/J0522/L26041118314385810DAB75_PH03.fits
+/sdf/data/fermi/u/adinesh/DATA/J0522/L26041118314385810DAB75_PH04.fits
+/sdf/data/fermi/u/adinesh/DATA/J0522/L26041118314385810DAB75_PH05.fits
+/sdf/data/fermi/u/adinesh/DATA/J0522/L26041118314385810DAB75_PH06.fits

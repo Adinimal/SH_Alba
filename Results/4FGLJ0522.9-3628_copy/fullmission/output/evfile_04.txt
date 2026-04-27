@@ -1,0 +1,6 @@
+/sdf/home/a/adinesh/fermi-user/DATA/J0522/L260416101627E79FF56C01_PH00.fits
+/sdf/home/a/adinesh/fermi-user/DATA/J0522/L260416101627E79FF56C01_PH01.fits
+/sdf/home/a/adinesh/fermi-user/DATA/J0522/L260416101627E79FF56C01_PH02.fits
+/sdf/home/a/adinesh/fermi-user/DATA/J0522/L260416101627E79FF56C01_PH03.fits
+/sdf/home/a/adinesh/fermi-user/DATA/J0522/L260416101627E79FF56C01_PH04.fits
+/sdf/home/a/adinesh/fermi-user/DATA/J0522/L260416101627E79FF56C01_PH05.fits
