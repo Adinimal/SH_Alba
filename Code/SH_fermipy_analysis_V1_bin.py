@@ -133,7 +133,7 @@ def main(cmd_line):
 	# --- Directory structure: source/run_id ---
 	file_tag = '%s_%s' % (srcname, peak)
 	
-	outdir='/sdf/scratch/users/a/adinesh/SH_Alba/%s/%s' % (srcname, peak)
+	outdir='/sdf/scratch/users/a/adinesh/SH_Alba/%s_psf/%s' % (srcname, peak)
 	copy_dir=Path('/sdf/data/fermi/u/adinesh/results/SH_Alba')
 	# Get the path of the currently executing script
 	current_script_path = Path(__file__).resolve() 
@@ -233,8 +233,8 @@ def main(cmd_line):
 		yml.write('  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF0_v1.txt"},\n')
 		yml.write('     selection : { evtype : 4, zmax : 105, emin : 1000, emax : 300000} }\n')
 		#High energy part
-		#yml.write('  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF3_v1.txt"},\n')
-		#yml.write('     selection : { evtype : 32, zmax : 105, emin : 300000, emax : 2000000} }\n')
+		yml.write('  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF3_v1.txt"},\n')
+		yml.write('     selection : { evtype : 32, zmax : 105, emin : 300000, emax : 2000000} }\n')
 		yml.write('  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF2_v1.txt"},\n')
 		yml.write('     selection : { evtype : 16, zmax : 105, emin : 300000, emax : 2000000} }\n')
 		yml.write('  - { model: {isodiff: "/sdf/group/fermi/g/neutrino/shared/software/diffuse/iso_P8R3_SOURCE_V3_PSF1_v1.txt"},\n')
@@ -316,7 +316,7 @@ def main(cmd_line):
 	#fitting powerlaw
 	model=gta.set_source_spectrum(srcname, spectrum_type='PowerLaw', spectrum_pars={'Prefactor' : {'value' : 1.0, 'scale' : 1e-12,
                                                          'max' : 1000.0, 'min' : 1e-5, 'free': 1},'Index' : {'value' : -2, 'scale' : 1.0,
-                                                         'max' : 5, 'min' : -5, 'free': 1},'Scale' : {'value' : pivot_energy, 'scale' : 1.0,
+                                                         'max' : 5, 'min' : -4, 'free': 1},'Scale' : {'value' : pivot_energy, 'scale' : 1.0,
                                                          'max' : 100000, 'min' : 100, 'free': 0}}, update_source=True)
                      
 	fitPL=gta.fit()
@@ -445,7 +445,7 @@ def main(cmd_line):
                                                          'max' : 1000.0, 'min' : 0.001, 'free': 1},'Index1' : {'value' : -2, 'scale' : 1.0,
                                                          'max' : 5, 'min' : -5, 'free': 1},'BreakValue' : {'value' : best_Eb, 'scale' : 1.0,
                                                          'max' : 2000000, 'min' : 5000, 'free': 0},'Index2' : {'value' : -1, 'scale' : 1.0,
-                                                         'max' : 5, 'min' : -5, 'free': 1}}, update_source=True)
+                                                         'max' : 5, 'min' : -4, 'free': 1}}, update_source=True)
 	BPLfit_best=gta.fit()
 	gta.write_roi('fit_model_BPL_best_%s' % file_tag)
 	BPL_best_like = BPLfit_best['loglike']
@@ -560,7 +560,7 @@ def main(cmd_line):
 	os.chdir('../')
 	
 	# Copy to permanent storage: results/SH_Alba/source/run_id/
-	final_dest = '%s/%s/%s' % (copy_dir, srcname, peak)
+	final_dest = '%s/%s_psf/%s' % (copy_dir, srcname, peak)
 	os.makedirs(os.path.dirname(final_dest), exist_ok=True)
 	if os.path.exists(final_dest):
 	    shutil.rmtree(final_dest)

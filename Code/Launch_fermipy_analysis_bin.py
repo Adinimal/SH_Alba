@@ -77,7 +77,7 @@ for INPUT_FILE in input_files:
         # Log files organized by source/type
         log_subdir = '%s/%s' % (LOG_DIR, srcname)
         os.makedirs(log_subdir, exist_ok=True)
-        logfile = '%s/logfile_%s_%s.txt' % (log_subdir, srcname, ID)
+        logfile = '%s/logfile_%s_%s_psf.txt' % (log_subdir, srcname, ID)
 
 
         # ---- SLURM settings ----
